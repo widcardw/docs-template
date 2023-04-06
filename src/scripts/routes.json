@@ -1,0 +1,37 @@
+{
+  "routes": [
+    {
+      "text": "Features",
+      "link": "features",
+      "children": [
+        {
+          "text": "Markdown",
+          "link": "basic"
+        },
+        {
+          "text": "Math Formulas",
+          "link": "math"
+        },
+        {
+          "text": "Mermaid-js Support",
+          "link": "mermaid"
+        }
+      ],
+      "index": true
+    },
+    {
+      "text": "Usage",
+      "link": "Usage",
+      "children": [
+        {
+          "text": "Astro Configurations",
+          "link": "astro"
+        },
+        {
+          "text": "Obsidian Configurations",
+          "link": "ob"
+        }
+      ]
+    }
+  ]
+}

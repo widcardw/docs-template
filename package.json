@@ -7,9 +7,24 @@
 		"start": "astro dev",
 		"build": "astro build",
 		"preview": "astro preview",
-		"astro": "astro"
+		"astro": "astro",
+		"route": "esno src/scripts/generate-routes.ts"
 	},
 	"dependencies": {
-		"astro": "^2.0.16"
+		"@astrojs/solid-js": "^2.0.2",
+		"astro": "^2.0.16",
+		"solid-js": "^1.4.3"
+	},
+	"devDependencies": {
+		"@flowershow/remark-wiki-link": "^1.1.2",
+		"@types/mdast": "^3.0.11",
+		"@types/node": "^18.14.6",
+		"@widcardw/remark-asciimath": "^0.0.3",
+		"@widcardw/remark-mermaid-simple": "^0.0.1",
+		"rehype-katex": "^6.0.2",
+		"remark-callouts": "^2.0.0",
+		"remark-mark-highlight": "^0.1.0",
+		"remark-math": "^5.1.1",
+		"unist-util-visit": "^4.1.2"
 	}
 }
