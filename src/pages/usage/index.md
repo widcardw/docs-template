@@ -107,6 +107,8 @@ jobs:
           folder: dist
 ```
 
+Go to _GitHub > Repo Settings > Actions > General_, set the **Workflow permissions** to **Read and write permissions**.
+
 When you **push a tag** (for example, `v1.0.0`) to remote, action will be triggered and the docs will be built within a few minutes.
 
 ### Deploy manually
