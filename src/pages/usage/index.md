@@ -58,56 +58,52 @@ It is recommended to upload the repo to GitHub, and then use [GitHub Actions](ht
 
 ### GitHub Actions
 
+> This method is not fully tested. When the repo name is not `<YOUR_NAME>.github.io`, the css and js will fail to load.
+
 Create `.github/workflows/deploy-docs.yml`. For more information, please refer to [GitHub Actions](https://github.com/features/actions).
 
 ```yaml
-name: deploy docs
+name: Deploy docs
 
 on:
   push:
     tags:
       - 'v*'
 
+# Allow this job to clone the repo and create a page deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  deploy-gh-pages:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout your repository using git
         uses: actions/checkout@v3
+      - name: Install, build, and upload your site
+        uses: withastro/action@v0
         with:
-          fetch-depth: 0
+            path: . # The root location of your Astro project inside the repository. (optional)
+            node-version: 16 # The specific version of Node that should be used to build your site. Defaults to 16. (optional)
+            package-manager: pnpm # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
 
-      - uses: pnpm/action-setup@v2.0.1
-        name: Install pnpm
-        id: pnpm-install
-        with:
-          version: 7
-          run_install: false
-
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        run: |
-          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
-
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
-        with:
-          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Install dependencies and build
-        run: pnpm install && pnpm build
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
 ```
 
-Go to _GitHub > Repo Settings > Actions > General_, set the **Workflow permissions** to **Read and write permissions**.
+Go to _GitHub > Repo Settings > Environment > github-pages_, set the **branches allowed > `main`** to **`v*`**.
+
+Set _Repo Settings > Pages > Build and deployment > Source_ to **GitHub Actions**.
 
 When you **push a tag** (for example, `v1.0.0`) to remote, action will be triggered and the docs will be built within a few minutes.
 
