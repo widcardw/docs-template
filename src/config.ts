@@ -11,7 +11,7 @@ export const SITE = {
   /**
    * Your site name, **must include the trailing slash**.
    */
-  site: 'https://docs.widcard.win/',
+  site: 'https://docs-template.widcard.win/',
   repo: 'https://github.com/widcardw/docs-template'
 }
 
