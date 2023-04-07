@@ -60,7 +60,7 @@ With the help of `@flowershow/remark-wiki-link`, you can import images like this
 > [!Caution]
 > However, the `![](./image.png)` is not fully supported, since the path is relative to the public folder.
 >
-> In this page `http://example.com/Usage/file`, `![](./image.png)` will be transformed into `http://example.com/Usage/file/image.png`, thus in public folder, you should create `Usage/file` and put the image in it, which seems to be so complex. `¯\_(ツ)_/¯`
+> In this page `https://localhost:3000/usage/ob`, `![](./image.png)` will be transformed into `http://localhost:3000/usage/ob/image.png`, thus in public folder, you should create `usage/ob` and put the image in it, which seems to be so complex. `¯\_(ツ)_/¯`
 
 ## Links
 

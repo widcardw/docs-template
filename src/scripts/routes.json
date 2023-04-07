@@ -21,7 +21,7 @@
     },
     {
       "text": "Usage",
-      "link": "Usage",
+      "link": "usage",
       "children": [
         {
           "text": "Astro Configurations",
@@ -31,7 +31,12 @@
           "text": "Obsidian Configurations",
           "link": "ob"
         }
-      ]
+      ],
+      "index": true
+    },
+    {
+      "text": "Changelog",
+      "link": "changlog"
     }
   ]
 }

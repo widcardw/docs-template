@@ -34,7 +34,7 @@ function wikilinkPageResolver(name: string) {
   if (!name.startsWith('/'))
     name = '/' + name
   name = name.replace(/ (\d)/g, '$1')
-  return image ? [name] : [name.replace(/ /g, '-').toLowerCase()]
+  return image ? [name] : [name.replace(/ /g, '-').toLowerCase() + (heading ? `#${heading}` : '')]
 }
 
 export {

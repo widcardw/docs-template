@@ -2,17 +2,17 @@ export const SITE = {
   /**
    * The top left title.
    */
-  title: 'Notes',
+  title: 'Docs',
   /**
    * Site description.
    */
-  description: 'Notes of widcardw',
-  defaultLanguage: 'zh_CN',
+  description: 'Document template of widcardw',
+  defaultLanguage: 'en_US',
   /**
    * Your site name, **must include the trailing slash**.
    */
-  site: 'https://notes.widcard.win/',
-  repo: 'https://github.com/widcardw/my-notes'
+  site: 'https://docs.widcard.win/',
+  repo: 'https://github.com/widcardw/docs-template'
 }
 
 /**
@@ -49,7 +49,11 @@ export const GISCUS = {
   loading: "lazy",
 }
 
-export const COMMUNITY_INVITE_URL = '' //'https://discord.gg/TeYHxaua38'
+export const COMMUNITY_INVITE_URL = 'https://discord.gg/TeYHxaua38'
+
+export const TOP_LINKS: TopLink[] = [
+  { text: 'widcardw', url: 'https://widcard.win' },
+]
 
 // This is the type of the frontmatter you put in the docs markdown files.
 export interface Frontmatter {
@@ -70,6 +74,11 @@ export const GITHUB_EDIT_URL = `${SITE.repo}/tree/main`
 //   appId: 'XXXXXXXXXX',
 //   apiKey: 'XXXXXXXXXX',
 // }
+
+interface TopLink {
+  text: string
+  url: string
+}
 
 export interface SidebarChild {
   text: string

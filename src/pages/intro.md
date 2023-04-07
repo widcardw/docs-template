@@ -1,53 +1,28 @@
 ---
-title: Notes
+title: Docs Template
 layout: ~/layouts/MainLayout.astro
 ---
 
 ## Introduction
 
-This is an optionated notes deployment template.
+This is an optionated notes deployment template. It's based on the [Astro Docs Theme](https://astro.build/themes/details/docs/).
 
-## Usage
+## What For?
 
-### With Obsidian.md
+This template is designed for those who want to share their Obsidian projects or markdown notes with others by deploying them as SSG.
 
-You can open the vault in the directory `src/pages`. Since the static assets are put in `src/pages/public`, you should set the _`Files & Links`_ > _`New link format`_ to **Absolute path in vault**.
+## Features
 
-### Write markdown
+### With Obsidian
 
-All the markdown files are put in `src/pages`. You can also create directories and put md files in them.
+I like [Obsidian](https://obsidian.md) as my "second brain", and I treat my notes or documents as a project.
 
-Insert the frontmatter at the top of the markdown. These properties are required.
+Markdown is quite a flexible mark up language. We can add some extensions to make it easy-to-use.
 
-```yaml
-title: Your Notes
-layout: ~/layouts/MainLayout.astro 
-# If the layout does not exist, the css will be broken.
-```
+### Deployment
 
-Then the subtitles of one document should start with `h2` instead of `h1`.
+I'd like to share them with friends, so I use [Astro](https://astro.build) to make a SSG deployment.
 
-### Before preview or deployment
+With the help of remark and rehype plugins, we can view the markdown files just like in Obsidian. Although it's quite hard for me to implement all these extensions, I will try to narrow the gap between them.
 
-Run the command to generate routes. All the dirs or files that starts with an underscore `_` will be ignored.
 
-```sh
-pnpm run route
-```
-
-> [!caution]
-> This command depends on `esno` and you must install it. If you do not want to install this dep, please use `ts-node` or other tools.
-
-### Static assets
-
-With the help of `@flowershow`, we can use wikilink in markdown files. You can insert an image like:
-
-```
-![[public/default-og-image.png]]
-```
-
-![[public/default-og-image.png]]
-
-## Configuration
-
-Please edit `src/config.ts`.

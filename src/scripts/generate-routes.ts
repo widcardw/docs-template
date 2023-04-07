@@ -54,7 +54,10 @@ async function accessDir(url: string) {
 async function generateRoute() {
   try {
     await fs.access(D)
-    const res = { routes: (await accessDir('')).sort((i, j) => i.link.localeCompare(j.link)) }
+    const res = { 
+      routes: (await accessDir(''))
+        .sort((i, j) => (j.children ? 1 : 0) - (i.children ? 1 : 0) || i.link.localeCompare(j.link)) 
+    }
     fs.writeFile('./src/scripts/routes.json', JSON.stringify(res, null, 2))
   }
   catch (e) {

@@ -60,16 +60,15 @@ Just look at the right sidebar, or go to the top on your mobile device. It is wr
 
 Note that the toc starts with `h2` instead of `h1`, since `h1` is the heading of this whole page.
 
-## Sidebar
+## Callouts
 
-The left sidebar is written with SolidJS. However, before you preview or build the site, please run
+This feature is implemented by `@flowershow`. However, There still remain some problems from my respective, for example, it is unfoldable. I will try to dive into it...
 
-```sh
-pnpm run route
+> [!tip]
+> This is a callout block.
+
+```md
+> [!tip]
+> This is a callout block.
 ```
-
-first. This command[^2] will generate the valid routes of this site, then the program will read the generated route and build up
-the left side bar.
-
-[^2]: This command runs on `esno`. If you do not have this cli, you can install it with `pnpm add -g esno`.
 
