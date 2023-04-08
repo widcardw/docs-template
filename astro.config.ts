@@ -7,30 +7,36 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import { remarkAsciiMath } from '@widcardw/remark-asciimath'
 import { remarkWikiLink } from '@flowershow/remark-wiki-link'
+import AutoImport from 'astro-auto-import'
 import { SITE, PUBDIR } from './src/config'
 import { remarkMermaid } from './src/plugins/mermaid/remark'
 import { wikilinkPageResolver } from './src/plugins/wikilink/resolver'
+import { astroCodeSnippets, codeSnippetAutoImport } from './src/plugins/code-highlight/remark'
 
 // https://astro.build/config
 export default defineConfig({
   site: SITE.site,
-  resolve: {
-    alias: {
-      '~/': `${resolve(import.meta.url, 'src')}/`,
-    },
-  },
+  integrations: [
+    AutoImport({
+      imports: [
+        // codeSnippetAutoImport,
+        // '~/components/integrations/CodeSnippets.astro'
+      ],
+    }),
+    solidJs(),
+    astroCodeSnippets(),
+  ],
   // you should put your static assets in this directory
   publicDir: PUBDIR,
-  integrations: [solidJs()],
   markdown: {
     gfm: true,
     remarkPlugins: [
-      remarkMark,
+      remarkMark as any,
       remarkCallouts,
       [remarkMermaid, { includeLoading: true }],
       remarkMath,  // used for math
       remarkAsciiMath,  // used for math
-      [remarkWikiLink, { pageResolver: wikilinkPageResolver }]
+      [remarkWikiLink, { pageResolver: wikilinkPageResolver }],
     ],
     rehypePlugins: [
       rehypeKatex,  // used for math
@@ -39,4 +45,4 @@ export default defineConfig({
       theme: 'nord',
     },
   },
-});
+})

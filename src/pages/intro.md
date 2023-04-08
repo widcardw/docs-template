@@ -25,4 +25,18 @@ I'd like to share them with friends, so I use [Astro](https://astro.build) to ma
 
 With the help of remark and rehype plugins, we can view the markdown files just like in Obsidian. Although it's quite hard for me to implement all these extensions, I will try to narrow the gap between them.
 
+```js title="index.js" mark={5} mark=/c/ ins={1-2} del={3-4} ins=/\{/ del=/\}/
+const a = {
+    b: {
+        c: {
+            d: 1
+        }
+    }
+}
+```
 
+aaaa
+
+```sh title="shell"
+pnpm run dev
+```
