@@ -19,8 +19,8 @@ layout: ~/layouts/MainLayout.astro
     - [x] `index.md` navigator
     - [x] Sort by folders > files
 - [ ] Extensions
-    - [ ] Code highlight line
-    - [ ] Code highlight regexp
+    - [x] Code highlight line
+    - [x] Code highlight regexp
     - [ ] Callouts
         - [ ] foldable callouts
 - [ ] Links

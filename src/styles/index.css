@@ -227,10 +227,10 @@ pre {
   position: relative;
   --padding-block: 1rem;
   --padding-inline: var(--pre-pd-inline);
-  /* padding: var(--padding-block) var(--padding-inline);
+  padding: var(--padding-block) var(--padding-inline);
   padding-right: calc(var(--padding-inline) * 2);
   margin-left: calc(var(--padding-inline) * -1);
-  margin-right: calc(var(--padding-inline) * -1); */
+  margin-right: calc(var(--padding-inline) * -1);
   padding-top: var(--padding-block);
   padding-bottom: var(--padding-block);
   font-family: var(--font-mono);
@@ -473,6 +473,13 @@ svg.WaveDrom {
   border-left: 0.15rem solid #88c0d0;
 }
 
+.code-snippet pre {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .code-snippet pre code {
   display: inline-block;
   min-width: 100%;
@@ -518,6 +525,7 @@ svg.WaveDrom {
   background: #00ff0020;
   border-radius: 0.15rem;
   box-shadow: #35b876 0px 0px 1px;
+  text-decoration: none;
 }
 
 .code-snippet .line.del {
@@ -539,6 +547,7 @@ svg.WaveDrom {
   background: #ff000020;
   border-radius: 0.15rem;
   box-shadow: #ff7777 0px 0px 1px;
+  text-decoration: none;
 }
 
 .code-snippet .header {
