@@ -47,7 +47,7 @@ slotHtml = slotHtml.replace(/<codesnippets([^>]+)>([\s\S]+?)<\/codesnippets>/g, 
     return ''
   })
 
-  props.replace(/lineMarkings="([^\"]+)"/, (_, $1: string) => {
+  props.replace(/(?<!in)lineMarkings="([^\"]+)"/, (_, $1: string) => {
     p.lineMarkings = $1
     return ''
   })

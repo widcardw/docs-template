@@ -13,12 +13,13 @@
 :root {
   --user-font-scale: 1rem - 16px;
   --max-width: calc(100% - 1rem);
-  --pre-pd-inline: 2rem;
+  --pre-pd-inline: 1rem;
 }
 
 @media (min-width: 50em) {
   :root {
     --max-width: 46em;
+    --pre-pd-inline: 2rem;
   }
 }
 
@@ -280,6 +281,12 @@ blockquote code {
   background-color: var(--theme-bg);
 }
 
+.code-snippet {
+  --inline-lr-gap: -1rem;
+  margin-left: var(--inline-lr-gap);
+  margin-right: var(--inline-lr-gap);
+}
+
 @media (min-width: 37.75em) {
   pre {
     --padding-inline: 1.25rem;
@@ -288,6 +295,11 @@ blockquote code {
     margin-left: 0;
     margin-right: 0;
   }
+
+  .code-snippet {
+    --inline-lr-gap: 0rem;
+  }
+
   .code-snippet.has-title pre {
     border-radius: 0 8px 8px 8px;
   }
@@ -518,6 +530,7 @@ svg.WaveDrom {
   position: absolute;
   margin-left: calc(0.5rem - var(--pre-pd-inline));
   color: #35b876;
+  font-family: var(--font-mono);
 }
 
 .code-snippet ins {
@@ -540,6 +553,7 @@ svg.WaveDrom {
   position: absolute;
   margin-left: calc(0.5rem - var(--pre-pd-inline));
   color: #ff7777;
+  font-family: var(--font-mono);
 }
 
 .code-snippet del {

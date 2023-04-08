@@ -1,4 +1,3 @@
-import { resolve } from 'path'
 import { defineConfig } from 'astro/config'
 import solidJs from "@astrojs/solid-js"
 import { remarkMark } from 'remark-mark-highlight'
@@ -7,22 +6,15 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import { remarkAsciiMath } from '@widcardw/remark-asciimath'
 import { remarkWikiLink } from '@flowershow/remark-wiki-link'
-import AutoImport from 'astro-auto-import'
 import { SITE, PUBDIR } from './src/config'
 import { remarkMermaid } from './src/plugins/mermaid/remark'
 import { wikilinkPageResolver } from './src/plugins/wikilink/resolver'
-import { astroCodeSnippets, codeSnippetAutoImport } from './src/plugins/code-highlight/remark'
+import { astroCodeSnippets } from './src/plugins/code-highlight/remark'
 
 // https://astro.build/config
 export default defineConfig({
   site: SITE.site,
   integrations: [
-    AutoImport({
-      imports: [
-        // codeSnippetAutoImport,
-        // '~/components/integrations/CodeSnippets.astro'
-      ],
-    }),
     solidJs(),
     astroCodeSnippets(),
   ],
