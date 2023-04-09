@@ -5,16 +5,23 @@ layout: ~/layouts/MainLayout.astro
 
 > This feature is borrowed from [Astro docs](https://github.com/withastro/docs).
 
+You can add more meta information at the heading of codeblock.
+
+~~~md ins=/title.*/
+```js title="JavaScript File" mark={1} ins=/Hello/
+console.log('Hello')
+```
+~~~
+
+This will be rendered into
+
+```js title="JavaScript File" mark={1} ins=/Hello/
+console.log('Hello')
+```
+
 ## Highlight lines or regexp
 
 Use `mark={2-5,7}` to highlight lines.
-
-~~~md
-```js title="Highlight lines" mark={1}
-const hello = 'Hello, world!'
-console.log(hello)
-```
-~~~
 
 ```js title="Highlight lines" mark={1}
 const hello = 'Hello, world!'
@@ -22,13 +29,6 @@ console.log(hello)
 ```
 
 Use `mark=/regexp/` to highlight matched expressions.
-
-~~~md
-```js title="Highlight expressions" mark=/hello/
-const hello = 'Hello, world!'
-console.log(hello)
-```
-~~~
 
 ```js title="Highlight expressions" mark=/hello/
 const hello = 'Hello, world!'
@@ -39,14 +39,6 @@ console.log(hello)
 
 Use `ins={2-5,7}` to highlight inserted lines.
 
-~~~md
-```json title="package.json" ins={2}
-{
-    "type": "module"
-}
-```
-~~~
-
 ```json title="package.json" ins={2}
 {
     "type": "module"
@@ -54,13 +46,6 @@ Use `ins={2-5,7}` to highlight inserted lines.
 ```
 
 Use `ins=/regexp/` to highlight inserted expressions.
-
-~~~md
-```js title="Insert semicolons" ins=/;/
-const a = 1;
-const b = arr.reduce((x, acc) => x + acc);
-```
-~~~
 
 ```js title="Insert semicolons" ins=/;/
 const a = 1;
@@ -71,26 +56,12 @@ const b = arr.reduce((x, acc) => x + acc);
 
 Use `del={2-5,7}` to highlight deleted lines.
 
-~~~md
-```js title="Delete lines" del={2}
-const hello = 'Hello, world!'
-console.log(hello)
-```
-~~~
-
 ```js title="Delete lines" del={2}
 const hello = 'Hello, world!'
 console.log(hello)
 ```
 
 Use `del=/regexp/` to highlight deleted expressions.
-
-~~~md
-```js title="Delete expressions" del=/hello/
-const hello = 'Hello, world!'
-console.log(hello)
-```
-~~~
 
 ```js title="Delete expressions" del=/hello/
 const hello = 'Hello, world!'

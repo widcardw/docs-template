@@ -6,6 +6,7 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import { remarkAsciiMath } from '@widcardw/remark-asciimath'
 import { remarkWikiLink } from '@flowershow/remark-wiki-link'
+import rehypeExternalLinks from 'rehype-external-links'
 import { SITE, PUBDIR } from './src/config'
 import { remarkMermaid } from './src/plugins/mermaid/remark'
 import { wikilinkPageResolver } from './src/plugins/wikilink/resolver'
@@ -32,6 +33,7 @@ export default defineConfig({
     ],
     rehypePlugins: [
       rehypeKatex,  // used for math
+      [rehypeExternalLinks, { target: '_blank', rel: 'nofollow' }],
     ],
     shikiConfig: {
       theme: 'nord',
