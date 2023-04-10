@@ -7,6 +7,7 @@ import LeftSidebar from '~/components/LeftSidebar/LeftSidebar.astro';
 import RightSidebar from '~/components/RightSidebar/RightSidebar.astro';
 import * as CONFIG from '~/config';
 import type { MarkdownHeading } from 'astro';
+import { GiscusArea } from '~/components/Giscus/GiscusArea';
 // import Footer from '~/components/Footer/Footer.astro';
 
 const { GISCUS } = CONFIG
@@ -132,22 +133,20 @@ const githubEditUrl = `${CONFIG.GITHUB_EDIT_URL}/${currentFile}`;
         <PageContent frontmatter={frontmatter} headings={headings} githubEditUrl={githubEditUrl}>
           <slot />
           {GISCUS.enabled && (
-            <script src="https://giscus.app/client.js"
-              data-repo={GISCUS.repo}
-              data-repo-id={GISCUS.repoId}
-              data-category={GISCUS.category}
-              data-category-id={GISCUS.categoryId}
-              data-mapping={GISCUS.mapping}
-              data-strict={GISCUS.strict}
-              data-reactions-enabled={GISCUS.reactionsEnabled}
-              data-emit-metadata={GISCUS.emitMetadata}
-              data-input-position={GISCUS.inputPosition}
-              data-theme={GISCUS.theme}
-              data-lang={GISCUS.lang}
-              data-loading={GISCUS.loading}
-              crossorigin="anonymous"
-              async>
-          </script>
+            <GiscusArea
+              repo={GISCUS.repo}
+              repoId={GISCUS.repoId}
+              category={GISCUS.category}
+              categoryId={GISCUS.categoryId}
+              mapping={GISCUS.mapping}
+              strict={GISCUS.strict}
+              reactionsEnabled={GISCUS.reactionsEnabled}
+              emitMetadata={GISCUS.emitMetadata}
+              inputPosition={GISCUS.inputPosition}
+              lang={GISCUS.lang}
+              loading={GISCUS.loading}
+              client:idle
+            />
           )}
         </PageContent>
       </div>

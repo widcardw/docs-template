@@ -34,19 +34,19 @@ export const OPEN_GRAPH = {
 }
 
 export const GISCUS = {
-  enabled: false,
-  repo: "xxx/xxx",
-  repoId: "xxx",
-  category: "Announcements",
-  categoryId: "xxx",
-  mapping: "pathname",
-  strict: "0",
-  reactionsEnabled: "1",
-  emitMetadata: "0",
-  inputPosition: "bottom",
-  theme: "transparent_dark",
-  lang: "zh-CN",
-  loading: "lazy",
+  enabled: true,
+  id: 'comments',
+  repo: 'widcardw/giscus-discussion',
+  repoId: 'R_kgDOHOA75A',
+  category: 'Announcements',
+  categoryId: 'DIC_kwDOHOA75M4COuTG',
+  term: 'Welcome',
+  mapping: 'url',
+  reactionsEnabled: '1',
+  emitMetadata: '0',
+  inputPosition: 'bottom',
+  lang: 'en',
+  loading: 'lazy',
 }
 
 export const COMMUNITY_INVITE_URL = 'https://discord.gg/TeYHxaua38'
