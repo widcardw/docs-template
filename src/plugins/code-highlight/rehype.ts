@@ -3,9 +3,12 @@ import { visit } from 'unist-util-visit'
 import { applyMarkings, isTerminal } from './api'
 
 const rehypePlugin: Plugin = function () {
-  return (tree, file) => {
+  return (tree) => {
     visit(tree, 'element', (element) => {
-      const tagName = element.tagName
+      // Here `element` is marked as `never`, but it really exists
+      // but it's no good to completely disable ts-check
+      const el = element as any
+      const tagName = el.tagName
       if (tagName !== 'CodeSnippets')
         return
 
@@ -14,12 +17,15 @@ const rehypePlugin: Plugin = function () {
         title: string
         lineMarkings: string
         inlineMarkings: string
-      } = element.properties
+      } = el.properties
 
       title = decodeURIComponent(title).replace(/([\\/])/g, "$1<wbr/>")
 
-      const children: Array<unknown> = element.children
-      const codeRaw: string = children[0].value
+      /**
+       * Actually we only use this type...
+       */
+      const children: Array<{ type: 'raw', value: string }> = el.children
+      const codeRaw = children[0].value
 
       let hasTitle = false
       let langIsTerminal = isTerminal(lang)
@@ -36,8 +42,8 @@ const rehypePlugin: Plugin = function () {
         children.unshift(headerEl)
       }
 
-      element.tagName = 'div'
-      element.properties = {
+      el.tagName = 'div'
+      el.properties = {
         className: [
           hasTitle && 'has-title',
           langIsTerminal && 'is-terminal',
