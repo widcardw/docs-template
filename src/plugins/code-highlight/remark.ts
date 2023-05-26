@@ -2,6 +2,7 @@ import { visit } from 'unist-util-visit'
 import type { BuildVisitor } from 'unist-util-visit'
 import type { BlockContent, Parent, Root } from 'mdast'
 import type { AstroIntegration } from 'astro'  
+import { rehypeCodeSnippets } from './rehype'
 
 const CodeSnippetTagname = 'CodeSnippets'
 export const codeSnippetAutoImport: Record<string, [string, string][]> = {
@@ -85,7 +86,7 @@ function visitCodeBlock(ast: any) {
 
       const attributes = {
         lang,
-        title: encodeMarkdownStringProp(title),
+        title: (title),
         lineMarkings: encodeMarkdownStringArrayProp(lineMarkings),
         inlineMarkings: encodeMarkdownStringArrayProp(inlineMarkings),
       }
@@ -119,6 +120,7 @@ export function astroCodeSnippets(): AstroIntegration {
         updateConfig({
           markdown: {
             remarkPlugins: [remarkHighlightLine],
+            rehypePlugins: [rehypeCodeSnippets],
           },
         })
       },
