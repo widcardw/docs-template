@@ -71,4 +71,3 @@ This feature is implemented by `@flowershow`. However, There still remain some p
 > [!tip]
 > This is a callout block.
 ```
-

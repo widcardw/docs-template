@@ -35,7 +35,7 @@ const rehypePlugin: Plugin = function () {
 
       if (title && title.trim()) {
         hasTitle = true
-        const headerEl = {
+        const headerEl: { type: 'raw'; value: string; } = {
           type: 'raw',
           value: `<div class="header">${title}</div>`
         }

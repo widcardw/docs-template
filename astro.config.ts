@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config'
 import solidJs from "@astrojs/solid-js"
 import { remarkMark } from 'remark-mark-highlight'
-import remarkCallouts from 'remark-callouts'
+import { remarkCallouts } from '@widcardw/remark-callouts'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import { remarkAsciiMath } from '@widcardw/remark-asciimath'
