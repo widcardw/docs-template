@@ -28,11 +28,11 @@ devDependencies:
     specifier: ^18.14.6
     version: 18.14.6
   '@widcardw/remark-asciimath':
-    specifier: ^0.0.3
-    version: 0.0.3
+    specifier: ^0.0.4
+    version: 0.0.4
   '@widcardw/remark-callouts':
-    specifier: ^0.0.3
-    version: 0.0.3
+    specifier: ^0.1.1
+    version: 0.1.1
   '@widcardw/remark-mermaid-simple':
     specifier: ^0.0.1
     version: 0.0.1
@@ -825,12 +825,12 @@ packages:
     resolution: {integrity: sha512-ukOMWnCg1tCvT7WnDfsUKQOFDQGsyR5tNgRpwmqi+5/vzU3ghdDXzvIM4IOPdSb3OeSsBNvmSL8nxIVOqi2WXA==}
     dev: false
 
-  /@widcardw/remark-asciimath@0.0.3:
-    resolution: {integrity: sha512-3jfNVtcAa+zEIUQYWxGErrstKT1IEjZdbX42XZZhcEhupI8vf6VTjUVp2t9m/GTWfovGDRh7UEW9oT/6AfaUsw==}
+  /@widcardw/remark-asciimath@0.0.4:
+    resolution: {integrity: sha512-1B2mdGEFRpuOJrITEZOTwYjMpywJ/XlIoXG0TpoxmOUXu3LMsHy33qYkzUQh6VqvcSNU282nGdO/jPLPS+0s9g==}
     dev: true
 
-  /@widcardw/remark-callouts@0.0.3:
-    resolution: {integrity: sha512-VR/hHLNKI11BDJn8fBV8/Y/U2B+ILmJJQJn6K39y0eLN1G1Tpl3gnWjn6KK0w4eO1r/qEpOGY9t6dOHukwmkqw==}
+  /@widcardw/remark-callouts@0.1.1:
+    resolution: {integrity: sha512-5IG2SaWPbOPD12Gy12WBlKHZlOj+j9nPHLCViPQRAK57faPlm5Sy8TNcH42JQYK6GV9bT98B4YoNvUxWjCeesw==}
     dev: true
 
   /@widcardw/remark-mermaid-simple@0.0.1:

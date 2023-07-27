@@ -62,7 +62,7 @@ Note that the toc starts with `h2` instead of `h1`, since `h1` is the heading of
 
 ## Callouts
 
-This feature is implemented by `@flowershow`. However, There still remain some problems from my respective, for example, it is unfoldable. I will try to dive into it...
+This feature is implemented by `@widcardw/remark-callouts`. You can fold the container by clicking the callout title.
 
 > [!tip]
 > This is a callout block.
